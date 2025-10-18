@@ -1,5 +1,9 @@
 # مجموعه صفحات پیش‌فرض وب‌سرور
 
+![GitHub stars](https://img.shields.io/github/stars/javadalmasi/web-server-defaults?style=social)
+![GitHub forks](https://img.shields.io/github/forks/javadalmasi/web-server-defaults?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/javadalmasi/web-server-defaults?style=social)
+
 مجموعه کاملی از صفحات خطا و پیش‌فرض برای وب‌سرورها با پشتیبانی از زبان فارسی و چیدمان راست‌چین.
 
 ## ویژگی‌ها
