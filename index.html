@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجموعه صفحات پیش‌فرض وب‌سرور</title>
+    <link href="assets/css/fonts.css" rel="stylesheet">
+    <script src="assets/js/gsap.min.js"></script>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/local-fonts.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+        @keyframes float {
+            0%,100%{transform:translate(0,0)}
+            25%{transform:translate(50px,50px)}
+            50%{transform:translate(0px,50px)}
+            75%{transform:translate(50px,0px)}
+        }
+        .container {
+            max-width: 900px;
+            text-align: center;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .page-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .page-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .page-code {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #6dd5ed;
+        }
+        .page-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .page-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .page-link:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 200px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .feature h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #6dd5ed;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 25px; }
+            h1 { font-size: 2.2rem; }
+            .description { font-size: 1rem; }
+            .pages-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="container">
+        <h1 id="title">مجموعه صفحات پیش‌فرض وب‌سرور</h1>
+        <p class="description" id="description">
+            این مجموعه شامل صفحات استاندارد HTTP برای نمایش خطاهای مختلف سمت کاربر است. 
+            کلیه صفحات به زبان فارسی و با پشتیبانی از راست‌چین طراحی شده‌اند.
+        </p>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>پشتیبانی فارسی</h3>
+                <p>همه متن‌ها به زبان فارسی و با قلم مناسب</p>
+            </div>
+            <div class="feature">
+                <h3>راست‌چین</h3>
+                <p>طراحی راست‌چین مناسب برای محتوای فارسی</p>
+            </div>
+            <div class="feature">
+                <h3>واکنش‌گرا</h3>
+                <p>سازگار با انواع دستگاه‌ها و رزولوشن‌ها</p>
+            </div>
+        </div>
+        
+        <div class="pages-grid">
+            <div class="page-card">
+                <div class="page-code">404</div>
+                <div class="page-title">صفحه یافت نشد</div>
+                <a href="404.html" class="page-link">مشاهده</a>
+            </div>
+            <div class="page-card">
+                <div class="page-code">403</div>
+                <div class="page-title">دسترسی غیرمجاز</div>
+                <a href="403.html" class="page-link">مشاهده</a>
+            </div>
+            <div class="page-card">
+                <div class="page-code">500</div>
+                <div class="page-title">خطای سرور داخلی</div>
+                <a href="500.html" class="page-link">مشاهده</a>
+            </div>
+            <div class="page-card">
+                <div class="page-code">502</div>
+                <div class="page-title">دروازه نامعتبر</div>
+                <a href="502.html" class="page-link">مشاهده</a>
+            </div>
+            <div class="page-card">
+                <div class="page-code">503</div>
+                <div class="page-title">سرویس در دسترس نیست</div>
+                <a href="503.html" class="page-link">مشاهده</a>
+            </div>
+            <div class="page-card">
+                <div class="page-code">410</div>
+                <div class="page-title">منسوخ شده</div>
+                <a href="410.html" class="page-link">مشاهده</a>
+            </div>
+            <div class="page-card">
+                <div class="page-code">429</div>
+                <div class="page-title">تعداد درخواست‌های زیاد</div>
+                <a href="429.html" class="page-link">مشاهده</a>
+            </div>
+            <div class="page-card">
+                <div class="page-code">DEFAULT</div>
+                <div class="page-title">صفحه پیش‌فرض</div>
+                <a href="default.html" class="page-link">مشاهده</a>
+            </div>
+            <div class="page-card">
+                <div class="page-code">STOP</div>
+                <div class="page-title">سایت متوقف شده</div>
+                <a href="stop.html" class="page-link">مشاهده</a>
+            </div>
+            <div class="page-card">
+                <div class="page-code">DOMAIN</div>
+                <div class="page-title">دامنه متصل نیست</div>
+                <a href="unbound-domain.html" class="page-link">مشاهده</a>
+            </div>
+        </div>
+        
+        <p class="description">
+            کلیه صفحات با تکنولوژی‌های مدرن طراحی و با افکت‌های جذاب انیمیشن داده شده‌اند.
+        </p>
+    </div>
+
+    <script>
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            const s = Math.random() * 60 + 10;
+            p.style.width = p.style.height = `${s}px`;
+            p.style.left = `${Math.random() * 100}%`;
+            p.style.top = `${Math.random() * 100}%`;
+            p.style.animation = `float ${Math.random() * 20 + 15}s infinite ease-in-out ${Math.random() * 5}s`;
+            particlesContainer.appendChild(p);
+        }
+        const style = document.createElement('style');
+        style.textContent = `@keyframes float {0%,100%{transform:translate(0,0)}25%{transform:translate(${Math.random()*100-50}px,${Math.random()*100-50}px)}50%{transform:translate(${Math.random()*100-50}px,${Math.random()*100-50}px)}75%{transform:translate(${Math.random()*100-50}px,${Math.random()*100-50}px)}}`;
+        document.head.appendChild(style);
+
+        gsap.set("#title, #description, .page-card, .feature", { opacity: 0, y: 30 });
+        gsap.to("#title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" });
+        gsap.to("#description", { opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: "power3.out" });
+        gsap.to(".page-card", { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.4, ease: "power3.out" });
+        gsap.to(".feature", { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.6, ease: "power3.out" });
+        gsap.to("body", { backgroundPosition: "400% 400%", duration: 20, repeat: -1, ease: "none" });
+    </script>
+</body>
+</html>
