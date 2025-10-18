@@ -48,7 +48,7 @@
 ├── default.html            # صفحه پیش‌فرض
 ├── stop.html               # صفحه توقف سایت
 ├── unbound-domain.html     # صفحه دامنه متصل نشده
-├── assets/
+├── https://cdn.jsdelivr.net/gh/javadalmasi/web-server-defaults@master/assets/
 │   ├── css/
 │   │   ├── fonts.css       # تعریف فونت‌ها
 │   │   └── local-fonts.css # استایل فونت‌های محلی
