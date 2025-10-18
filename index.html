@@ -23,6 +23,7 @@
             width: 100% !important;
             height: 100% !important;
             z-index: 1 !important;
+            pointer-events: none !important;
         }
         @keyframes float {
             0%,100%{transform:translate(0,0)}
@@ -31,7 +32,8 @@
             75%{transform:translate(50px,0px)}
         }
         .container {
-            max-width: 900px;
+            max-width: 1200px;
+            width: 90%;
             text-align: center;
             z-index: 10;
             background: rgba(0, 0, 0, 0.2);
@@ -69,6 +71,8 @@
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
+            position: relative;
+            z-index: 12;
         }
         .page-card:hover {
             transform: translateY(-10px);
@@ -96,6 +100,8 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+            position: relative;
+            z-index: 15;
         }
         .page-link:hover {
             background: rgba(255, 255, 255, 0.25);
@@ -121,11 +127,27 @@
             margin-bottom: 10px;
             color: #6dd5ed;
         }
+        @media (max-width: 1200px) {
+            .container { 
+                width: 95%;
+                padding: 30px; 
+            }
+        }
         @media (max-width: 768px) {
-            .container { padding: 25px; }
+            .container { 
+                width: 95%;
+                padding: 25px; 
+            }
             h1 { font-size: 2.2rem; }
             .description { font-size: 1rem; }
             .pages-grid { grid-template-columns: 1fr; }
+            .installation-steps {
+                padding: 15px;
+            }
+            .installation-steps code {
+                display: block;
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
@@ -150,6 +172,22 @@
             <div class="feature">
                 <h3>واکنش‌گرا</h3>
                 <p>سازگار با انواع دستگاه‌ها و رزولوشن‌ها</p>
+            </div>
+        </div>
+        
+        <div class="installation">
+            <h2 style="font-size: 1.8rem; margin-bottom: 25px; color: #6dd5ed;">نصب خودکار روی سرور</h2>
+            <div class="installation-steps" style="background: rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 15px; margin: 20px auto; max-width: 800px;">
+                <p style="margin-bottom: 20px; font-size: 1.1rem; direction: ltr; text-align: right;">
+                    برای نصب خودکار این صفحات خطا روی سرورهای مختلف:<br>
+                    <code style="background: rgba(0, 0, 0, 0.3); padding: 5px 10px; border-radius: 5px; direction: ltr; display: inline-block; margin-top: 10px;">wget https://github.com/javadalmasi/web-server-defaults/archive/main.zip</code><br>
+                    <code style="background: rgba(0, 0, 0, 0.3); padding: 5px 10px; border-radius: 5px; direction: ltr; display: inline-block; margin-top: 5px;">unzip main.zip && cd web-server-defaults-main</code><br>
+                    <code style="background: rgba(0, 0, 0, 0.3); padding: 5px 10px; border-radius: 5px; direction: ltr; display: inline-block; margin-top: 5px;">chmod +x install.sh</code><br>
+                    <code style="background: rgba(0, 0, 0, 0.3); padding: 5px 10px; border-radius: 5px; direction: ltr; display: inline-block; margin-top: 5px;">sudo ./install.sh install</code>
+                </p>
+                <p style="margin-top: 15px; font-size: 1rem;">
+                    پشتیبانی از: cPanel، DirectAdmin، Nginx، Apache، aaPanel
+                </p>
             </div>
         </div>
         
