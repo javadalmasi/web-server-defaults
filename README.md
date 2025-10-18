@@ -58,6 +58,32 @@
 └── README.md
 ```
 
+## نصب خودکار
+
+برای نصب خودکار این صفحات خطا روی سرورهای مختلف، یک اسکریپت نصب ارائه شده است که از سیستم‌های زیر پشتیبانی می‌کند:
+- cPanel
+- DirectAdmin
+- Nginx
+- Apache
+- aaPanel
+
+برای استفاده از اسکریپت نصب:
+
+```bash
+# دانلود اسکریپت
+wget https://github.com/javadalmasi/web-server-defaults/archive/main.zip
+unzip main.zip
+cd web-server-defaults-main
+
+# اعطای مجوز اجرا
+chmod +x install.sh
+
+# نصب صفحات خطا
+sudo ./install.sh install
+```
+
+برای جزئیات بیشتر در مورد نحوه استفاده از اسکریپت نصب، فایل [INSTALLATION.md](INSTALLATION.md) را مشاهده کنید.
+
 ## مجوز
 
 این پروژه تحت مجوز Creative Commons Attribution 4.0 International قرار دارد. برای جزئیات بیشتر، فایل [LICENSE](LICENSE) را ببینید.
