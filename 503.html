@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سرویس در دسترس نیست</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #3a7bd5, #00d2ff, #3a7bd5);
+            background-size: 400% 400%;
+            color: white;
+            font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            text-align: center;
+            z-index: 10;
+        }
+        .icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .icon svg {
+            width: 60px;
+            height: 60px;
+            opacity: 0.9;
+        }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 14px 36px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .particle { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.15); }
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            p { font-size: 1.1rem; }
+            .icon { width: 90px; height: 90px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="container">
+        <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="1.5"/>
+                <path d="M12 8V16M8 12H16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M12 12H13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <h1 id="title">۵۰۳</h1>
+        <p id="subtitle">سرویس موقتاً در دسترس نیست. لطفاً بعداً دوباره تلاش کنید.</p>
+        <a href="/" class="btn" id="homeBtn">بازگشت به صفحه اصلی</a>
+    </div>
+
+    <script>
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            const s = Math.random() * 60 + 10;
+            p.style.width = p.style.height = `${s}px`;
+            p.style.left = `${Math.random() * 100}%`;
+            p.style.top = `${Math.random() * 100}%`;
+            p.style.animation = `float ${Math.random() * 20 + 15}s infinite ease-in-out ${Math.random() * 5}s`;
+            particlesContainer.appendChild(p);
+        }
+        const style = document.createElement('style');
+        style.textContent = `@keyframes float {0%,100%{transform:translate(0,0)}25%{transform:translate(${Math.random()*100-50}px,${Math.random()*100-50}px)}50%{transform:translate(${Math.random()*100-50}px,${Math.random()*100-50}px)}75%{transform:translate(${Math.random()*100-50}px,${Math.random()*100-50}px)}}`;
+        document.head.appendChild(style);
+
+        gsap.set("#title, #subtitle, #homeBtn", { opacity: 0, y: 30 });
+        gsap.to("#title", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" });
+        gsap.to("#subtitle", { opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: "power3.out" });
+        gsap.to("#homeBtn", { opacity: 1, y: 0, duration: 0.8, delay: 0.4, ease: "power3.out" });
+        gsap.to("body", { backgroundPosition: "400% 400%", duration: 20, repeat: -1, ease: "none" });
+    </script>
+</body>
+</html>
